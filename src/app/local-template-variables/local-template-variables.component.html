@@ -1,0 +1,27 @@
+<div>
+<!--
+  @let products = allProducts$ | async;
+-->
+  @let products = allProducts();
+  @if (products) {
+    <div class="products-container">
+      @for (product of products; track product.id) {
+        <div class="product-container">
+          <img class="product-image" src="{{product.image}}"/>
+          <div class="product-title"><span>{{ product.title }}</span> <br>
+            <span>{{ product.price }}</span>
+            <br />
+            @let totalPrice = product.price * product.quantity | currency;
+            <span>Total: {{ totalPrice }}</span> <br>
+            @let rating = product.rating.rate;
+            <span>Rating: {{ rating }}</span> <br>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>
+<br>
+<div class="code">
+  `let can not be reassigned like JS let`
+</div>

@@ -1,0 +1,27 @@
+<h2>RxJS Interop</h2>
+<h2>toSignal</h2>
+<!--<div>
+  <button (click)="loadProducts()">Load Products</button>
+</div>-->
+<div>
+  @if (products()) {
+    <div class="products-container">
+      @for (product of products(); track product.id) {
+        <div class="product-container">
+          <img class="product-image" src="{{product.image}}"/>
+          <div class="product-title"><span>{{ product.title }}</span> <br>
+            <span>{{ product.price }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>
+
+<hr>
+<h3>toObservable</h3>
+<div>
+  <button (click)="increaseCount()">Increase count</button>
+  <br>
+  Counter is {{obs$ | async}}
+</div>

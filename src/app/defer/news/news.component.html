@@ -1,0 +1,55 @@
+<div *ngFor="let article of articles">
+  <div class="article">
+    <h3>{{ article.title }}</h3>
+
+    @defer (on viewport) {
+      <img [src]="article.imageUrl" alt="Article Image">
+    } @placeholder (minimum 500ms) {
+      <!-- Placeholder content while loading -->
+      <div class="placeholder">
+        <p><img src="https://placehold.co/200x300" alt=""></p>
+      </div>
+    } @loading {
+      <!-- Loading indicator -->
+      <div class="loading">
+        <img
+          src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTJpbzV1eWpvOHdpZTRjMXF4NGhqMzlleWM1Y2Zwc2U1a292dm9jbSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/uIJBFZoOaifHf52MER/giphy.gif"
+          alt="Loading...">
+      </div>
+    } @error {
+      <!-- Error message -->
+      <div class="error">
+        <p>Failed to load image. Please try again later.</p>
+      </div>
+    }
+
+    @defer (on interaction) {
+      <div class="comments">
+        <h4>Comments</h4>
+        <ul>
+          <li *ngFor="let comment of article.comments">{{ comment }}</li>
+        </ul>
+      </div>
+    } @placeholder {
+      <!-- Placeholder content while loading -->
+      <div class="placeholder">
+        <p>Comments placeholder...</p>
+      </div>
+    } @loading {
+      <!-- Loading indicator -->
+      <div class="loading">
+        <img
+          src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTJpbzV1eWpvOHdpZTRjMXF4NGhqMzlleWM1Y2Zwc2U1a292dm9jbSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/uIJBFZoOaifHf52MER/giphy.gif"
+          alt="Loading...">
+      </div>
+    } @error {
+      <!-- Error message -->
+      <div class="error">
+        <p>Failed to load comments. Please try again later.</p>
+      </div>
+    }
+  </div>
+
+</div>
+
+
