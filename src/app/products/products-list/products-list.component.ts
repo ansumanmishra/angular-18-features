@@ -1,4 +1,4 @@
-import {Component, computed, input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, Input, input, OnChanges, SimpleChanges} from '@angular/core';
 import {NgForOf} from '@angular/common';
 
 @Component({
@@ -8,20 +8,20 @@ import {NgForOf} from '@angular/common';
     NgForOf
   ],
   template: `
-    <!--    <div *ngFor="let product of products">
+        <div *ngFor="let product of products">
           {{product.name}}
-        </div>-->
-    <div *ngFor="let product of filteredProducts()">
+        </div>
+<!--    <div *ngFor="let product of filteredProducts()">
       {{ product?.name }}
-    </div>
+    </div>-->
   `,
   styles: [
     `
     `
   ],
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-/*export class ProductsListComponent implements OnChanges {
+export class ProductsListComponent implements OnChanges {
   @Input() products: any[] = [];
   @Input() filterProductName: string = '';
   originalProducts: any[] = [];
@@ -33,23 +33,22 @@ import {NgForOf} from '@angular/common';
 
     if (changes['filterProductName']) {
       if (this.filterProductName) {
-        this.products = this.originalProducts.filter(product => product.name.includes(this.filterProductName));
+        this.products = this.originalProducts.filter(product => product.name.toLowerCase().includes(this.filterProductName.toLowerCase()));
       } else {
         this.products = [...this.originalProducts];
       }
     }
   }
-}*/
+}
 
+/*
 export class ProductsListComponent {
-  withoutZoneVar = 1;
   products = input.required<{ name: string; price: number }[]>();
-  filterProductName = input('', {
-    transform: (value: string) => value.toLowerCase()
-  });
+  filterProductName = input('', {transform: (value: string) => value.toLowerCase()});
   filteredProducts = computed(() => {
     return this.filterProductName ? this.products().filter(product => {
       return product.name.toLowerCase().includes(this.filterProductName())
     }) : this.products()
   });
 }
+*/
