@@ -12,19 +12,21 @@ import {NewsComponent} from './news/news.component';
     <h3>Old way of loading dynamic component</h3>
     <button (click)="loadDynamicComponent()">Show News</button>
     <ng-container #container></ng-container>
-    
+
     <hr>
     <h3>Using Defer</h3>
-      <a href="https://angular.dev/guide/defer" target="_blank">Link for the documentation</a> <br><br>
+    <a href="https://angular.dev/guide/defer" target="_blank">Link for the documentation</a> <br><br>
     <button (click)="showNews = true">Show News</button>
-    @defer (when showNews) {
-      <app-news />
-    }
+    <div>
+      @defer (when showNews) {
+        <app-news/>
+      }
+    </div>
   `,
 })
 export class DeferComponent {
   showNews = false;
-  @ViewChild('container', { read: ViewContainerRef, static: true }) container!: ViewContainerRef;
+  @ViewChild('container', {read: ViewContainerRef, static: true}) container!: ViewContainerRef;
 
   async loadDynamicComponent() {
     const {NewsComponent} = await import('./news/news.component');
