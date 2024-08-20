@@ -1,5 +1,5 @@
 import {Component, signal} from '@angular/core';
-import {NgForOf} from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
 
 interface Product {
   productId: number;
@@ -29,27 +29,36 @@ const products: Product[] = [
   selector: 'app-control-flow',
   standalone: true,
   imports: [
-    NgForOf
+    NgForOf,
+    NgIf
   ],
   template: `
     <h2>Control Flow</h2>
     <h3>Old implementation</h3>
 
-    <ul>
-      <li *ngFor="let product of products;">{{product.name}}</li>
-    </ul>
-    <!--trackBy: trackByProductId-->
-    <br><br>
+    <ng-container *ngIf="products; else productsNotLoadedBlock">
+      <ng-container *ngIf="products.length; else noProductsBlock">
+        <ul>
+          <li *ngFor="let product of products;">{{product.name}}</li>
+        </ul>
+      </ng-container>
+      <ng-template #noProductsBlock>
+        <div>There are no products. </div>
+      </ng-template>
+      <!--trackBy: trackByProductId-->
+      <br>
+    </ng-container>
+    <ng-template #productsNotLoadedBlock>
+      <div>Products not loaded yet </div>
+    </ng-template>
     
     <h3>With new control flow</h3>
     @if(products) {
       <ul>
       @for(product of products; track product.productId) {
-        <li>
-          {{product.name}}
-        </li>
+        <li>{{product.name}}</li>
       } @empty {
-        <li> There are no products.</li>
+        <div> There are no products.</div>
       }
       </ul>
     } @else {
@@ -79,7 +88,7 @@ const products: Product[] = [
   ]
 })
 export class ControlFlowComponent {
-  products = products;
+  products: Product[] | null = products;
   number = signal(5);
 
   /*  trackByProductId(index: number, product: any) {
