@@ -29,7 +29,7 @@ const products = [
   ],
   template: `
     <h2>Products</h2>
-    <input type="text" [(ngModel)]="filterProductName">
+    <input type="text" [(ngModel)]="filterProductName"> <br><br>
     <app-products-list [products]="products" [filterProductName]="filterProductName"></app-products-list>
   `,
   styles: [
