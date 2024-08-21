@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, inject, OnInit, signal} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, OnInit, signal} from '@angular/core';
 
 @Component({
   selector: 'app-zoneless-example',
@@ -6,7 +6,8 @@ import {ChangeDetectorRef, Component, inject, OnInit, signal} from '@angular/cor
   imports: [],
   template: `
     Count: {{ count }} <br>
-    <!--Count Signal: {{countSignal()}}-->
+ <!--   Count Signal: {{countSignal()}} <br>-->
+    <button (click)="increaseCount()">Increase Count</button>
 
     <div class="code" style="margin-top: 50px">
       Benefits: <br>
@@ -19,6 +20,7 @@ import {ChangeDetectorRef, Component, inject, OnInit, signal} from '@angular/cor
       </ul>
     </div>
   `,
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ZonelessExampleComponent implements OnInit {
   count = 1;
@@ -28,9 +30,14 @@ export class ZonelessExampleComponent implements OnInit {
   ngOnInit(): void {
     setInterval( () => {
       this.count = this.count + 1;
-      // this.countSignal.set(this.count + 1);
+      /*this.countSignal.set(this.countSignal() + 1);*/
       // this.cd.detectChanges();
     }, 1000)
   }
 
+  increaseCount() {
+    // this.count = this.count + 1;
+    // this.countSignal.set(this.count + 1);
+    // this.cd.detectChanges();
+  }
 }
