@@ -1,4 +1,4 @@
-import {Component, inject, Injector, runInInjectionContext, Signal, signal} from '@angular/core';
+import {Component, inject, Injector, OnInit, runInInjectionContext, Signal, signal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {toObservable, toSignal} from '@angular/core/rxjs-interop';
 import {AsyncPipe} from '@angular/common';
@@ -12,11 +12,15 @@ import {AsyncPipe} from '@angular/common';
   templateUrl: './rxjs-interop.component.html',
   styleUrl: './rxjs-interop.component.css'
 })
-export class RxjsInteropComponent {
+export class RxjsInteropComponent implements OnInit {
   http = inject(HttpClient);
   injector = inject(Injector);
   products: any = toSignal(this.http.get('https://fakestoreapi.com/products?limit=5'), {initialValue: []});
   // products: Signal<any> = signal(null);
+
+  ngOnInit() {
+    // this.products = toSignal(this.http.get('https://fakestoreapi.com/products?limit=5'), {initialValue: []});
+  }
 
   ////////
   countSignal = signal<number>(0);

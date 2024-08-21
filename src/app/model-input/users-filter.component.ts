@@ -11,8 +11,12 @@ import {NgIf} from '@angular/common';
   ],
   template: `
     <input type="text" [(ngModel)]="filterText" (ngModelChange)="filterTextChange.emit(filterText)" />
-<!--    <input type="text" [(ngModel)]="filterText" />
-    <span *ngIf="filterText()">{{filterTextMessage()}}</span>-->
+<!--
+    <input type="text" [(ngModel)]="filterText" />
+-->
+<!--
+    <span *ngIf="filterText()">{{filterTextMessage()}}</span>
+-->
   `,
   styles: [
     `
@@ -24,11 +28,11 @@ export class UsersFilterComponent {
   @Input() filterText = '';
   @Output() filterTextChange = new EventEmitter<string>();
 
-/*  filterText = model('', {
-    alias: 'userNameFilterText',
-  });
+/*
+  filterText = model('', {alias: 'userNameFilterText'});
+*/
 
-  filterTextMessage = computed(() => {
+/*  filterTextMessage = computed(() => {
     return `The filter text is - ${this.filterText()}`
   });*/
 }
