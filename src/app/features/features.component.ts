@@ -8,7 +8,7 @@ import {RouterLink} from '@angular/router';
     RouterLink
   ],
   templateUrl: './features.component.html',
-  styleUrl: './features.component.css'
+  styleUrl: './features.component.scss'
 })
 export class FeaturesComponent {
 

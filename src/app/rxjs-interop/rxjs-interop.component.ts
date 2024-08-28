@@ -10,7 +10,7 @@ import {AsyncPipe} from '@angular/common';
     AsyncPipe
   ],
   templateUrl: './rxjs-interop.component.html',
-  styleUrl: './rxjs-interop.component.css'
+  styleUrl: './rxjs-interop.component.scss'
 })
 export class RxjsInteropComponent implements OnInit {
   http = inject(HttpClient);

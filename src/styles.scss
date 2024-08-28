@@ -1,0 +1,108 @@
+/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.circle-node {
+  border: 1px solid red;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+  margin-bottom: 100px;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.menu-list {
+  list-style: decimal;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list li, li {
+  margin: 15px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.code {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.binary-tree {
+  width: fit-content;
+
+  .root-label {
+    &::before {
+      content: none !important;
+    }
+  }
+
+  .node {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    position: relative;
+
+    &:nth-child(3) > .node-label::before {
+      left: auto;
+      right: 50%;
+      background: linear-gradient(
+                      to bottom left,
+                      #0000 49%,
+                      #000 0 51%,
+                      #0000 0
+      );
+    }
+  }
+
+  .node-label {
+    grid-column: 1 / 3;
+    border: 1px solid;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: auto auto;
+    text-align: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 1.5rem;
+      left: 50%;
+      top: 0;
+      transform: translateY(-100%);
+      background: linear-gradient(
+                      to bottom right,
+                      #0000 49%,
+                      #000 0 51%,
+                      #0000 0
+      );
+    }
+  }
+}

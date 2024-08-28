@@ -8,6 +8,7 @@ import {LocalTemplateVariablesComponent} from './local-template-variables/local-
 import {RxjsInteropComponent} from './rxjs-interop/rxjs-interop.component';
 import {FallbackNgContentComponent} from './fallback-ng-content/fallback-ng-content.component';
 import {ZonelessExampleParentComponent} from './zoneless-example/zoneless-example-parent.component';
+import {LocalChangeDetectionComponent} from './local-change-detection/local-change-detection.component';
 
 export const routes: Routes = [
   {
@@ -45,5 +46,9 @@ export const routes: Routes = [
   {
     path: 'fallback-ng-content',
     component: FallbackNgContentComponent
+  },
+  {
+    path: 'local-change-detection',
+    component: LocalChangeDetectionComponent
   }
 ];

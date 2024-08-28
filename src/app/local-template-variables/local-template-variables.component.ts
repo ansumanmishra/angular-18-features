@@ -7,7 +7,7 @@ import {CurrencyPipe} from '@angular/common';
   standalone: true,
   imports: [CurrencyPipe],
   templateUrl: './local-template-variables.component.html',
-  styleUrl: './local-template-variables.component.css'
+  styleUrl: './local-template-variables.component.scss'
 })
 export class LocalTemplateVariablesComponent {
   allProducts = signal<any>(products);

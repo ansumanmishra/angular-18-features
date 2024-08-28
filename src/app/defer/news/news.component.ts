@@ -9,7 +9,7 @@ import {NgForOf} from '@angular/common';
     NgForOf
   ],
   templateUrl: './news.component.html',
-  styleUrl: './news.component.css'
+  styleUrl: './news.component.scss'
 })
 export class NewsComponent {
   articles: Article[] = [];
