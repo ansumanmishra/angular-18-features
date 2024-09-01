@@ -19,7 +19,7 @@ import {NgForOf} from '@angular/common';
     `
     `
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductsListComponent implements OnChanges {
   @Input() products: any[] = [];

@@ -13,11 +13,11 @@ import {CounterService} from './counter.service';
     EightComponent
   ],
   template: `
-<!--    <span
+    <span
       class="node-label"
       [style.background-color]="color"
     >4- {{counter}}
-    </span>-->
+    </span>
 
 <!--    <span
       class="node-label"
@@ -51,17 +51,17 @@ import {CounterService} from './counter.service';
   >4- {{counterService.counter | async}}
       </span>-->
 
-<span
+<!--<span
   class="node-label"
   [style.background-color]="color"
 >4- {{counterService.counter()}}
-      </span>
+      </span>-->
 
     <app-eight class="node" />
   `,
   styles: `
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FourComponent extends BaseColorComponent {
   counter = 0;
@@ -73,18 +73,18 @@ export class FourComponent extends BaseColorComponent {
   constructor() {
     super();
 
-    fromEvent(this.host.nativeElement, 'click').subscribe( _ => {
+/*    fromEvent(this.host.nativeElement, 'click').subscribe( _ => {
       this.counterService.increaseCounter()
-    });
+    });*/
 
     setInterval( () => {
-      // this.counter = this.counter + 1;
+      this.counter = this.counter + 1;
       // this.counter$.next(this.counter$.value + 1);
       // this.counterSignal.set(this.counterSignal() + 1);
     }, 1000);
   }
 
   incrementCounter() {
-    this.counterSignal.set(this.counterSignal() + 1);
+    // this.counterSignal.set(this.counterSignal() + 1);
   }
 }

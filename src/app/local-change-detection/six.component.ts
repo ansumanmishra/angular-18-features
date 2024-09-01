@@ -18,7 +18,7 @@ import {TenComponent} from './ten.component';
   `,
   styles: `
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SixComponent extends BaseColorComponent {
 }

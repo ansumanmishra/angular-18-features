@@ -16,7 +16,7 @@ import {BaseColorComponent} from './base-color.component';
   `,
   styles: `
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ElevenComponent extends BaseColorComponent {
 }

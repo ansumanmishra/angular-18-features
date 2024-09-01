@@ -21,7 +21,7 @@ import {AsyncPipe} from '@angular/common';
   `,
   styles: `
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SevenComponent extends BaseColorComponent {
   counterService = inject(CounterService);

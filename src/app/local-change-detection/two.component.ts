@@ -20,7 +20,7 @@ import {FiveComponent} from './five.component';
   `,
   styles: `
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TwoComponent extends BaseColorComponent {
 

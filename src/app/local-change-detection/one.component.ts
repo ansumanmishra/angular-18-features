@@ -21,7 +21,7 @@ import {ThreeComponent} from './three.component';
       </div>
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OneComponent extends BaseColorComponent {
 
