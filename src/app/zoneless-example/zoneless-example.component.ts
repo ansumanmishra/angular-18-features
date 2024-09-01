@@ -20,7 +20,7 @@ import {ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, OnInit, s
       </ul>
     </div>
   `,
-  // changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class ZonelessExampleComponent implements OnInit {
   count = 1;

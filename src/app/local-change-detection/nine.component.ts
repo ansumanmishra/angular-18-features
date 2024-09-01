@@ -1,4 +1,4 @@
-import {Component, } from '@angular/core';
+import {ChangeDetectionStrategy, Component,} from '@angular/core';
 import {BaseColorComponent} from './base-color.component';
 
 @Component({
@@ -14,6 +14,7 @@ import {BaseColorComponent} from './base-color.component';
   `,
   styles: `
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NineComponent extends BaseColorComponent {
 }

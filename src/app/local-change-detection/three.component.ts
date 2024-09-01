@@ -19,7 +19,7 @@ import {SevenComponent} from './seven.component';
   `,
   styles: `
   `,
- // changeDetection: ChangeDetectionStrategy.OnPush
+ changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ThreeComponent extends BaseColorComponent {
 

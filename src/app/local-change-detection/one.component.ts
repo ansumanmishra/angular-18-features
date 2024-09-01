@@ -23,6 +23,6 @@ import {ThreeComponent} from './three.component';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LocalChangeDetectionComponent extends BaseColorComponent {
+export class OneComponent extends BaseColorComponent {
 
 }
